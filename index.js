@@ -55,9 +55,12 @@ let ball = 0;
 let sum = 0;
 let wicket = 0;
 let over = 0.0;
+let temp_over = 0;
 let temp = 0.0;
-let run1 = 0;
+let run1 = 100000000;
 let inning = 0;
+
+
 for (let key of keys) {
     key.addEventListener('click', () => {
 
@@ -106,18 +109,20 @@ for (let key of keys) {
         if (wicket == 10) {
             alert("match over");
         }
-        if (inning = 2) {
-            if (sum < run1) {
-                alert(`${bt} is lose the match,
-                    match over`);
-            }
-            else {
-                alert(`${bt} win the match,
-                    match over`);
-            }
-        }
+
 
     })
+}
+
+function next_inning()
+{
+    if (result1.textContent == "" && result2.textContent == "") {
+        temp_over = over.toFixed(1);
+        result1.textContent = `${bt} : ${sum}-${wicket} / ${over.toFixed(1)}`;
+    }
+    else {
+        result2.textContent = `${bt} : ${sum}-${wicket} / ${over.toFixed(1)}`;
+    }
 }
 
 
@@ -126,9 +131,29 @@ function updateOver() {
         alert("pleace select new over button");
         over += 0.5;
         temp = 0.0;
+        if (over.toFixed(1) == temp_over) {
+            if (sum < run1) {
+                alert(`${bt} is lose the match,
+                    match over`);
+                    next_inning();  
+            }
+            else {
+                alert(`${bt} win the match,
+                    match over`);
+                    new_inning();
+            }
+        }
+
     } else {
+        console.log("sum",sum,"run1",run1);
         temp += 0.1;
         over += 0.1;
+        if (sum > run1) {
+            alert(`${bt} is won the match,
+                match over`);
+                next_inning();
+        }
+
     }
 }
 
@@ -153,6 +178,7 @@ new_match.addEventListener('click', () => {
     run.textContent = "0";
     wickets.textContent = "0";
     overs.textContent = "0.0";
+    run1=100000000;
     sum = 0;
     wicket = 0;
     over = 0.0;
@@ -168,9 +194,10 @@ new_match.addEventListener('click', () => {
 })
 
 
-new_inning.addEventListener('click', () => {
+new_inning.addEventListener('click', ()=> {
 
     if (result1.textContent == "" && result2.textContent == "") {
+        temp_over = over.toFixed(1);
         result1.textContent = `${bt} : ${sum}-${wicket} / ${over.toFixed(1)}`;
     }
     else {
@@ -188,6 +215,7 @@ new_inning.addEventListener('click', () => {
     run.textContent = "0";
     wickets.textContent = "0";
     overs.textContent = "0.0";
+    run1 = sum;
     sum = 0;
     wicket = 0;
     over = 0.0;
@@ -199,7 +227,9 @@ new_inning.addEventListener('click', () => {
     }
     ball = 0;
     inning++;
-    run1 = sum;
+    // console.log("before run copy sum",sum);
+
+    console.log("run copy",run1);
 })
 
 function go_score() {
