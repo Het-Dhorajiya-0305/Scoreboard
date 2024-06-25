@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/97ebdf5864.js" crossorigin="anonymous"></script>
+
+    <title>Score Bord</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="https://img.freepik.com/premium-photo/cricketer-neon-art_981061-11742.jpg" alt="" class="timage">
+        <div class="title">
+            sccore</div>
+        <div class="nav_iteam"><button onclick="go_home()">Home</button></div>
+
+        <div class="nav_iteam"><button onclick="go_score()">Score Bord</button></div>
+        <div class="nav_iteam"><button onclick="go_about()">About Us</button></div>
+
+    </nav>
+    <div class="home">
+        <div class="intro">
+            <p class="fline">Hello Everyone</p>
+            <p class="sline"> Welcome to the Cricket Scoreboard!</p>
+            <p class="tline"> This is your go-to platform for creating and tracking live cricket scores, tailored
+                exclusively for cricket enthusiasts. Whether you're scoring a friendly match at your local club or
+                managing a professional game, our user-friendly interface allows you to input and update scores in
+                real-time with ease. Stay on top of every run, wicket, and over as you watch the game unfold, ensuring
+                an accurate and up-to-the-minute representation of the match. Dive into the excitement of cricket
+                scoring and keep the spirit of the game alive with our dynamic and interactive scoreboard.</p>
+        </div>
+        <div class="picture">
+
+            <img src="https://www.shutterstock.com/image-vector/group-cricket-players-action-cartoon-600nw-1678602742.jpg"
+                alt="" class="full">
+        </div>
+    </div>
+    </div>
+    <div class="score">
+        <div class="team_form">
+            <div class="team_name">
+                <div>
+                    <label for="fteam">First Team :</label>
+                    <input type="text" placeholder="enter first team" class="first_team" id="fteam">
+                </div>
+                <div>
+                    <label for="steam">Second Team :</label>
+                    <input type="text" placeholder="enter second team" class="second_team" id="steam">
+                </div>
+                <button class="enter">Submit</button>
+
+            </div>
+
+            <div class="batting_team">
+                <label for="bteam">Batting Team :</label>
+                <input type="text" name="" id="bteam" placeholder="enter batting team">
+                <button class="benter">Enter</button>
+            </div>
+            <div class="result">
+                <div class="team1_result"></div>
+                <div class="team2_result"></div>
+            </div>
+
+        </div>
+
+        <div class="score_board">
+            <div class="teams">
+                <div class="team1 team"></div>
+                <span>VS</span>
+                <div class="team2 team"></div>
+            </div>
+            <div class="batting"></div>
+            <div class="display">
+                <div class="run">00</div>
+                <span>-</span>
+                <div class="wickets">0</div>
+                <div class="overs">0.0</div>
+            </div>
+            <div class="balls">
+            </div>
+            <div class="numbers">
+                <div class="num0 key">0</div>
+                <div class="num1 key">1</div>
+                <div class="num2 key">2</div>
+                <div class="num3 key">3</div>
+                <div class="num4 key">4</div>
+                <div class="num5 key">5</div>
+                <div class="num6 key">6</div>
+                <div class="wide key">Wide</div>
+                <div class="noball key">No Ball</div>
+                <div class="wicket key">Wicket</div>
+            </div>
+            <button class="over btn">New Over</button>
+            <button class="inning btn">New Inning</button>
+            <button class="match btn">New Match</button>
+        </div>
+    </div>
+
+    <div class="about_us">
+        <div class="about">
+            <img src="het.jpg" alt="">
+            <div class="me">
+                <div class="name">Het Dhorajiya</div>
+
+               <div class="mail"> <i class="fa-solid fa-envelope mail"> hetdhorajiya566@gmail.com</i></div>
+
+                <a href="https://www.instagram.com/__het0305__/" target="_blank" class="icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/het-dhorajiya-679aa2292/" target="_blank" class="icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
